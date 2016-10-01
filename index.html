@@ -1,0 +1,592 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Javascript & Internet of Things</title>
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/fa/css/font-awesome.min.css">
+    <!-- Printing and PDF exports -->
+    <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <style>
+    h1,
+    h2,
+    h3 {
+        font-family: 'dosis' !important;
+    }
+    
+    .heart {
+        animation: beat 0.9s infinite alternate;
+        color: #F44336;
+        margin-left: 12px;
+        font-size: 39px;
+        text-align: center;
+        vertical-align: initial;
+        padding-right: 12px;
+    }
+    
+    @keyframes beat {
+        0% {
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+        15% {
+            -moz-transform: scale(1.5);
+            -ms-transform: scale(1.5);
+            -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+        }
+        30% {
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+        70% {
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+    }
+    
+    ::selection {
+        color: #eee;
+        background: #333;
+        text-shadow: none;
+    }
+    
+    .lowercase {
+        text-transform: lowercase !important;
+    }
+    
+    .nocase {
+        text-transform: none !important;
+    }
+    
+    img {
+        border: none !important;
+        box-shadow: none !important;
+    }
+    
+    .row {
+        width: 100%;
+    }
+    
+    .col-50 {
+        width: 50%;
+        float: left;
+    }
+    
+    .col-45 {
+        width: 45%;
+        float: left;
+    }
+    
+    .fa-plus:before {
+        content: "+";
+    }
+    
+    .fa-equal:before {
+        content: "=";
+    }
+    
+    .sign {
+        position: relative;
+        top: -108px;
+        margin: 26px;
+        font-size: 81px;
+        font-weight: 900;
+    }
+    
+    .inline-block {
+        display: inline-block;
+    }
+    
+    .heart.fragment {
+        font-size: 138px;
+        top: -65px;
+    }
+    
+    a {
+        color: #333 !important;
+        text-decoration: underline !important;
+    }
+    
+    a:hover {
+        color: #333 !important;
+        text-decoration: none !important;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Javascript & Internet of Things</h1>
+                <hr>
+                <h3>When JS Meets IoT <i class="fa fa-heart heart"></i></h3>
+                <a href="https://goo.gl/q8KkYG" target="_blank">https://goo.gl/q8KkYG</a>
+                <br>
+                <p>
+                    Arvind Ravulavaru
+                </p>
+            </section>
+            <section>
+                <h2 class="lowercase">@arvindr21</h2>
+                <hr>
+                <a href="http://twitter.com/arvindr21" target="_blank" class="image" style="text-decoration: none !important;">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a href="http://github.com/arvindr21" target="_blank" class="image" style="text-decoration: none !important;">
+                    <i class="fa fa-github"></i>
+                </a>
+                <br> Author: <a href="https://www.packtpub.com/application-development/learning-ionic" target="_blank" class="image black underline">Learning Ionic</a>
+                <br>
+                <br> Blog: <a href="http://thejackalofjavascript.com" target="_blank" class="image black underline">
+                The Jackal of Javascript</a>
+                </p>
+            </section>
+            <section>
+                <h2 class="lowercase">@work</h2>
+                <hr>
+                <p>
+                    <p>Platform Architect / Co-Founder
+                        <img src="imgs/tis.png" alt="" style="margin-top: -72px;">
+                    </p>
+                </p>
+            </section>
+            <section>
+                <h2 class="nocase">Agenda</h2>
+                <hr>
+                <div>
+                    <img src="imgs/iot.png" class="fragment" style="width:23%">
+                    <i class="fa fa-plus sign fragment"></i>
+                    <img src="imgs/js.png" class="fragment" style="width:21%">
+                    <i class="fa fa-equal sign fragment"></i>
+                    <i class="fa fa-heart heart sign fragment"></i>
+                </div>
+            </section>
+            <section>
+                <img src="imgs/iot.png" style="width: 39%">
+            </section>
+            <section>
+                <h1>What the <em class="nocase">IoT</em> ?</h1>
+            </section>
+            <section>
+                <img src="imgs/joke1.jpg" style="width: 60%">
+            </section>
+            <section>
+                <img src="imgs/1.png">
+            </section>
+            <section>
+                <h1 class="nocase">In Simpler Terms : </h1>
+            </section>
+            <section>
+                <img src="imgs/2.png">
+            </section>
+            <section>
+                <h2 class="nocase">Internet of Things is Quite <u><em>old</em></u></h2>
+            </section>
+            <section>
+                <h2 class="nocase">Well... Nearly... <br><u><em>35 years old</em></u></h2>
+            </section>
+            <section>
+                <h2 class="nocase">The First IoT Device*</h2>
+                <hr>
+                <p>
+                    <div class="col-50">
+                        <img src="imgs/3.png" width="81%">
+                    </div>
+                    <div class="col-50">
+                        <ul>
+                            <li>A Coke Machine at Carnegie Mellon University, in <em><b>1982</b></em></li>
+                            <li>By four exercise challenged but ingenious graduate students, <em>Mike Kazar, David Nichols, John Zsarnay, & Ivor Durham</em></li>
+                            <li>So they could check from their desks if the machine was loaded with cold coke</li>
+                        </ul>
+                    </div>
+                </p>
+            </section>
+            <section>
+                <h3 class="nocase">Did You Know :<br>The first webpage was created in <em><u>1991</u></em></h3>
+            </section>
+            <section>
+                <h2 class="nocase">Another Early IoT Device</h2>
+                <hr>
+                <p>
+                    <div class="col-50">
+                        <img src="imgs/4.png" width="81%">
+                    </div>
+                    <div class="col-50">
+                        <ul>
+                            <li>The Internet Toaster by <em><b>John Romkey</b></em> in <em><b>1989</b></em></li>
+                            <li>Connected to the internet with TCP/IP</li>
+                            <li>Controlled via Simple Networking Management Protocol Management Information Base (SNMP MIB)</li>
+                            <li>One control to turn on/off</li>
+                        </ul>
+                    </div>
+                </p>
+            </section>
+            <section>
+                <h2 class="nocase">The Trojan Room Coffee Pot</h2>
+                <hr>
+                <p>
+                    <div class="col-50">
+                        <img src="imgs/5.png" width="81%">
+                    </div>
+                    <div class="col-50">
+                        <ul>
+                            <li>Created by <em><b>Quentin Stafford-Fraser</b></em> and <em><b>Paul Jardetzky</b></em> in <em><b>1993</b></em></li>
+                            <li>It was located in the 'Trojan Room' within the Computer Laboratory of the University of Cambridge</li>
+                            <li>It used to monitor the pot levels with an image being updated about 3x a minute and sent to the buildings server</li>
+                        </ul>
+                    </div>
+                </p>
+            </section>
+            <section>
+                <h1 style="font-size: 63px;" class="nocase">Laziness is the Mother of Invention!</h1>
+            </section>
+            <section>
+                <h1 class="nocase">IoT In the Real World</h1>
+            </section>
+            <section>
+                <h1 class="nocase">Healthcare</h1>
+                <hr>
+                <img src="imgs/6.png">
+            </section>
+            <section>
+                <h2 class="nocase">The Heart will notify The Hospital</h2>
+                <hr>
+                <img src="imgs/7.png">
+            </section>
+            <section>
+                <h1 class="nocase">Consumer IoT</h1>
+            </section>
+            <section style="width: 100%">
+                <h2 class="nocase">"IoT Helps us keep our <u>plants hydrated</u><br><br> and our <u>baby butts dry</u>"</h2>
+                <p>
+                    <br> - Sudha Jamthe,
+                    <br> IoT Disruptions
+                </p>
+            </section>
+            <section>
+                <h2 class="nocase">Wearables</h2>
+                <hr>
+                <img src="imgs/10.jpg" style="width: 60%">
+            </section>
+            <section>
+                <img src="imgs/8.png">
+            </section>
+            <section>
+                <h2 class="nocase">The Smart Toilet (*-*)</h2>
+                <hr>
+                <img src="imgs/9.jpg" style="width: 60%">
+            </section>
+            <section>
+                <img src="imgs/smrt2.png" style="width: 80%">
+            </section>
+            <section>
+                <h2>Roombah...!!!</h2>
+                <hr>
+                <img src="imgs/roomba.gif" style="width: 80%">
+            </section>
+            <section>
+                <h2>Garage Openers... What's new?</h2>
+                <hr>
+                <img src="imgs/garage.jpg" style="width: 60%">
+            </section>
+            <section>
+                <h1 class="nocase"><em>IIoT</em></h1>
+            </section>
+            <section>
+                <h2 class="nocase">The Toothpaste Factory (*~*)</h2>
+                <hr>
+                <img src="imgs/11.jpg" style="width: 50%">
+            </section>
+            <section>
+                <h1 class="nocase">Industrial IoT</h1>
+                <hr>
+                <img src="imgs/12.png">
+            </section>
+            <section>
+                <img src="imgs/almostall.png">
+            </section>
+            <section>
+                <img src="imgs/js.png" style="width: 39%">
+            </section>
+            <section>
+                <h1>The world's most misunderstood programming language</h1>
+            </section>
+            <section>
+                <h1>OR</h1>
+                <img src="imgs/13.jpg" style="width: 65%">
+            </section>
+            <section>
+                <h1>Few Reasons!</h1>
+            </section>
+            <section>
+                <h2>Machine Precision</h2>
+                <hr>
+                <pre><code>0.1 + 0.2 !== 0.3</code></pre>
+            </section>
+            <section>
+                <h2 class="nocase"><em>undefined</em> can be <em>defined</em></h2>
+                <hr>
+                <pre><code>var someVar;
+alert(someVar == undefined); //evaluates true</code></pre>
+                <pre><code>undefined = "I'm not undefined!";
+var someVar;
+alert(someVar == undefined); //evaluates false!</code></pre>
+            </section>
+            <section>
+                <h2 class="nocase">Scope can be faked</h2>
+                <hr>
+                <pre><code>var animal = 'dog';
+
+function getAnimal(adjective) {
+    console.log(adjective + ' ' + this.animal);
+};
+
+var myObj = {
+    animal: 'camel'
+};
+
+getAnimal.call(myObj, 'lovely'); //logs 'lovely camel'
+</code></pre>
+            </section>
+            <section>
+                <h2 class="nocase"><em>null</em> is an <em>object</em></h2>
+                <hr>
+                <pre><code>console.log(typeof null); //logs 'object'</code></pre>
+            </section>
+            <section>
+                <h2 class="nocase"><em>nan</em> is a <em>number</em></h2>
+                <hr>
+                <pre><code>console.log(typeof NaN); //logs 'Number'
+console.log(NaN === NaN); //evaluates false</code></pre>
+            </section>
+            <section>
+                <h2 class="nocase">Automatic globals</h2>
+                <hr>
+                <pre><code>function f() { foo = 123 };
+f();
+console.log(foo); // logs 123</code></pre>
+            </section>
+            <section>
+                <h2 class="nocase">W.L.I.I.A.</h2>
+                <hr>
+                <img src="imgs/wliia.jpg" style="width: 50%">
+            </section>
+            <section>
+                <h2 class="nocase">Type Coercion</h2>
+                <hr>
+                <pre><code>'' == '0'		//false
+0 == ''			//true
+0 == '0'		//true
+false == 'false'	//false
+false == '0'		//true
+false == undefined	//false
+false == null		//false
+null == undefined	//false
+" \t\r\n" == 0		//true
+</code></pre>
+            </section>
+            <section>
+                <h1 class="nocase"><code>(;)</code> optional?</h1>
+                <hr>
+                <img src="imgs/semicolons.jpg" style="width: 60%">
+            </section>
+            <section>
+                <h1 class="nocase">What the...?</h1>
+                <hr>
+                <pre><code>$ {} + [] // 0</code></pre>
+                <pre><code>$ {} + [] + '' // "0"</code></pre>
+                <pre><code>$ ({} + {}) // "[object Object][object Object]"</code></pre>
+                <pre><code>$ ({} + []) // "[object Object]"</code></pre>
+                <pre><code>$ Array(16).join() // ",,,,,,,,,,,,,,,"</code></pre>
+                <pre><code>$ Array(16).join().length // 15</code></pre>
+                <pre><code>$ 'js' - 1 // NaN</code></pre>
+            </section>
+            <section>
+                <h1 class="nocase">Callback Hell</h1>
+                <hr>
+                <img src="imgs/cbhell.gif" style="width: 60%">
+            </section>
+            <section>
+                <h1 class="nocase">All these problems & JS?</h1>
+            </section>
+            <section>
+                <h1>Here is Why?</h1>
+                <hr>
+                <ul>
+                    <li class="fragment">JS JS everywhere..</li>
+                    <li class="fragment"><a href="http://latentflip.com/loupe" target="_blank">Event Driven nature</a></li>
+                    <li class="fragment">One language all the way!</li>
+                    <li class="fragment">HUGE set of libraries and frameworks</li>
+                    <li class="fragment">ES6 is here!</li>
+                    <li class="fragment">Amazing community</li>
+                    <li class="fragment">It is free! :P</li>
+                </ul>
+            </section>
+            <section>
+                <div>
+                    <img src="imgs/iot.png" class="" style="width:23%">
+                    <i class="fa fa-plus sign"></i>
+                    <img src="imgs/js.png" style="width:21%">
+                </div>
+            </section>
+            <section>
+                <h1 class="nocase">How do we <em>IoTify</em>?</h1>
+                <hr>
+                <div>
+                    <img src="imgs/h.1.png" class="fragment" style="width:23%">
+                    <i class="fa fa-plus sign fragment"></i>
+                    <img src="imgs/h.2.png" class="fragment" style="width:21%">
+                    <i class="fa fa-plus sign fragment"></i>
+                    <img src="imgs/h.3.png" class="fragment" style="width:21%">
+                </div>
+            </section>
+            <section>
+                <h1 class="nocase">IoT Reference Architecture</h1>
+                <hr>
+                <img src="imgs/iot-architecture-ref.png" style="width: 100%">
+            </section>
+            <section>
+                <h1 class="nocase">Where does <em>JS</em> fit in?</h1>
+                <hr>
+                <ul>
+                    <li>Hardware</li>
+                    <li>Gateways - Hardware/Software</li>
+                    <li>Server/Data Aggregators</li>
+                    <li>Web Dashboards</li>
+                    <li>Mobile Apps</li>
+                    <li>Desktop Apps</li>
+                </ul>
+            </section>
+            <section>
+                <h1 class="nocase">Hardware</h1>
+                <hr>
+                <p>
+                    <img class="col-45" src="imgs/pi.png">
+                    <img class="col-45" src="imgs/edison.png" style="padding-left: 20px;">
+                </p>
+            </section>
+            <section>
+                <h1 class="nocase">Gateways - Hardware</h1>
+                <hr>
+                <p>
+                    <img class="col-45" src="imgs/pi.png">
+                    <img class="col-45" src="imgs/edison.png" style="padding-left: 20px;">
+                    <img class="col-45" src="imgs/espruino.png">
+                    <img class="col-45" src="imgs/tessel.png" style="margin-top: 40px; padding-left: 20px;">
+                </p>
+            </section>
+            <section>
+                <h1 class="nocase">Gateways - Software</h1>
+                <hr>
+                <p>
+                    <img class="col-45" src="imgs/MQTTjs.png">
+                    <img class="col-45" src="imgs/amqp.png" style="margin-top: 90px; background: #333;margin-left: 50px;">
+                </p>
+            </section>
+            <section>
+                <h1 class="nocase">Server/Data Aggregators</h1>
+                <hr>
+                <p>
+                    <img class="col-45" src="imgs/nodejs.png">
+                    <img class="col-45" src="imgs/dbs.gif">
+                </p>
+            </section>
+            <section>
+                <h1 class="nocase">Web Dashboards</h1>
+                <hr>
+                <p>
+                    <img src="imgs/mean.jpg">
+                </p>
+            </section>
+            <section>
+                <h1 class="nocase">Mobile Apps</h1>
+                <hr>
+                <p>
+                    <img class="col-45" src="imgs/cordova.png">
+                    <img class="col-45" src="imgs/ionic.png">
+                </p>
+            </section>
+            <section>
+                <h1 class="nocase">Desktop Apps</h1>
+                <hr>
+                <p>
+                    <img class="col-45" src="imgs/electron.png" style="margin-top: 120px; margin-right: 20px">
+                    <img class="col-45" src="imgs/nodewebkit.png">
+                </p>
+            </section>
+            <section>
+                <h1 class="nocase">Standards</h1>
+                <hr>
+                <img src="imgs/standards.png" style="width: 70%">
+            </section>
+            <section>
+                <h1 class="nocase">Demo</h1>
+            </section>
+            <section>
+                <img src="imgs/tis.png" alt="" style="margin-top: -72px;">
+                <a href="mailto:arvind@theiotsuitcase.com?Subject=Talk%20%3A%20JS%20%26%20IoT" target="_top" style="margin-top: -72px; display: block; margin-bottom: 81px">arvind@theiotsuitcase.com</a>
+                <h2>Eat - Sleep - IoT - Repeat</h2>
+            </section>
+        </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
+        controls: true,
+        progress: true,
+        slideNumber: false,
+        overview: true,
+        center: true,
+        touch: true,
+        fragments: true,
+        transition: 'slide',
+        backgroundTransition: 'default',
+        viewDistance: 3,
+        // width: '81%',
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [{
+            src: 'lib/js/classList.js',
+            condition: function() {
+                return !document.body.classList;
+            }
+        }, {
+            src: 'plugin/markdown/marked.js'
+        }, {
+            src: 'plugin/markdown/markdown.js'
+        }, {
+            src: 'plugin/notes/notes.js',
+            async: true
+        }, {
+            src: 'plugin/highlight/highlight.js',
+            async: true,
+            callback: function() {
+                hljs.initHighlightingOnLoad();
+            }
+        }]
+    });
+    </script>
+</body>
+
+</html>
