@@ -1,6 +1,7 @@
 # Javascript & Internet of Things
 
-This presentation was created for [GDG Devfest](http://devfest.gdghyd.org) - October 1st 2016
+- This presentation was created for [GDG Devfest](http://devfest.gdghyd.org) - October 1st 2016
+- This presentation was updated for Hyderabad MEAN Stack Meetup - July 8th 2017
 
 Few References used in presentation: 
 * http://brendaneich.github.io/Strange-Loop-2012/#/
